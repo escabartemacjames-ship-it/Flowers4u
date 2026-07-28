@@ -1298,43 +1298,91 @@ mask-image: linear-gradient(to top, transparent 40%, #079097 80%) !important;
 .not-loaded * {
   animation-play-state: paused !important;
 }
+/* ---------- TITLE ---------- */
+
 .title{
     position: absolute;
-    top: 40px;
+    top: 4vh;
     left: 50%;
     transform: translateX(-50%);
+    width: 90%;
+    max-width: 1200px;
     text-align: center;
-    color: white;
     z-index: 999;
 
     opacity: 0;
     animation: fadeUp 2s ease forwards;
 }
 
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translate(-50%, 30px);
-    }
-    to {
-        opacity: 1;
-        transform: translate(-50%, 0);
-    }
-}
 .title h1{
-    font-size: 3rem;
-    animation: glow 2.5s ease-in-out infinite alternate;
+    margin: 0;
+
+    font-family: Georgia, serif;
+    font-weight: bold;
+
+    /* Responsive font */
+    font-size: clamp(2rem, 4vw, 4.5rem);
+
+    line-height: 1.1;
+
     color: #ffffff;
 
     text-shadow:
-        0 0 8px #ffffff,
-        0 0 16px #ff9dff,
-        0 0 32px #d14dff,
-        0 0 64px #8a2be2;
+        0 0 5px #fff,
+        0 0 10px #ff9dff,
+        0 0 20px #ff4dff,
+        0 0 35px #d400ff,
+        0 0 60px #8a2be2;
+
+    animation: glow 2.5s ease-in-out infinite alternate;
 }
 
 .title p{
-    font-size: 1rem;
+    margin-top: 8px;
+
+    font-size: clamp(.8rem,1vw,1.2rem);
+
+    color: white;
+
+    text-shadow:
+        0 0 5px #fff,
+        0 0 10px #d400ff;
+}
+
+/* ---------- FADE ---------- */
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translate(-50%,25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translate(-50%,0);
+    }
+}
+
+/* ---------- GLOW ---------- */
+
+@keyframes glow{
+
+    from{
+        text-shadow:
+            0 0 5px #fff,
+            0 0 10px #ff9dff,
+            0 0 20px #ff4dff;
+    }
+
+    to{
+        text-shadow:
+            0 0 8px #fff,
+            0 0 18px #ff9dff,
+            0 0 35px #ff4dff,
+            0 0 60px #d400ff,
+            0 0 100px #8a2be2;
+    }
+
 }
   </style>
 </body>
